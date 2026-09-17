@@ -2,11 +2,18 @@
 #include <string>
 #include <iomanip>
 #include <fstream> //ifstream
-
+#include <vector>
+#include <algorithm>
 void parseString(std::string &line, std::string &field);
+/*struct Employee {
+    string name;
+    int empNum;
+    int rate;
+    int hours;
+};*/
 int main() {
     std::ifstream csvFile; //instantiated ifstream object
-
+    //std::vector<Employee> info;
     int loc;
     std::string name;
     std::string empNum;
@@ -19,7 +26,7 @@ int main() {
         std::cout << "Can't open file" << std::endl;
         return 1;
     }
-
+//create vector and push back employee info into vector
     std::string line;
     std::getline(csvFile, line); //read header ignore
     std::cout << "--------------------------------------------------\n";
@@ -52,9 +59,6 @@ int main() {
     loc = line.find(',');
     hours = line.substr(0,loc);
     line = line.substr(loc+1,line.length());*/
-
-
-
 
 
     return 0;
